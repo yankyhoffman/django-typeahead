@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  webapp:
+    build: .
+    environment:
+      SECRET_KEY: "${SECRET_KEY}"
+    user: "${UID:-1000}:${GID:-1000}"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - data:/data
+
+volumes:
+  data:

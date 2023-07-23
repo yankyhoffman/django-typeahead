@@ -1,0 +1,15 @@
+{% if records %}
+
+  <div class="panel" x-show="show">
+    {% for record in records %}
+      <a class="panel-block" @click="setRecord({ id: {{ record.id }}, name: '{{ record.name }}'})">
+        {{ record }}
+      </a>
+    {% endfor %}
+  </div>
+
+{% elif records is None %}
+  <p>Start typing to search</p>
+{% else %}
+  <p>No records found</p>
+{% endif %}

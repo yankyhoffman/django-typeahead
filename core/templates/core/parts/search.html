@@ -1,0 +1,32 @@
+<div x-data="{
+       id: null,
+       value: '',
+       show: false,
+       setRecord(record) {
+         this.id = record.id;
+         this.value = record.name;
+         this.show = false;
+       }
+     }">
+  <div class="control has-icons-left">
+    <input type="text"
+           name="q"
+           class="input"
+           placeholder="Search"
+           hx-get="{% url 'core:search' %}"
+           hx-trigger="keyup changed delay:500ms, search"
+           hx-target="#results"
+           @htmx:after-settle.camel.window="show = true">
+
+    <span class="icon is-left is-small"><ion-icon name="search-outline"></ion-icon></span>
+  </div>
+
+  <div id="results" @click.outside="show = false">
+    {% include 'core/parts/results.html' with patrons=None %}
+  </div>
+
+  <p>
+    ID: <span x-text="id"></span>
+    Value: <span x-text="value"></span>
+  </p>
+</div>
