@@ -1,6 +1,6 @@
 {% if records %}
 
-  <div class="panel" x-show="show">
+  <div class="panel select-options" x-show="show">
     {% for record in records %}
       <a class="panel-block" @click="setRecord({ id: {{ record.id }}, name: '{{ record.name }}'})">
         {{ record }}
