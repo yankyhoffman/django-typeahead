@@ -1,9 +1,17 @@
 {% if records %}
-    {% for record in records %}
-      <a class="dropdown-item" @click="setRecord({ id: {{ record.id }}, name: '{{ record.name }}'})">
-        {{ record }}
-      </a>
-    {% endfor %}
+  {% for record in records %}
+    <a class="dropdown-item" @click="setRecord({ id: {{ record.id }}, name: '{{ record.name }}'})">
+      {{ record }}
+    </a>
+  {% endfor %}
+
+  {% if records.has_next %}
+    <hr class="dropdown-divider">
+    <a href="#" class="dropdown-item">
+      Load more
+    </a>
+  {% endif %}
+
 {% elif records is None %}
   <a class="dropdown-item">Start typing to search</a>
 {% else %}
