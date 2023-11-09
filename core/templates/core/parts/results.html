@@ -6,10 +6,9 @@
   {% endfor %}
 
   {% if records.has_next %}
-    <hr class="dropdown-divider">
-    <a href="#" class="dropdown-item">
-      Load more
-    </a>
+    <div class="dropdown-item">
+      <a href="#" class="button is-small is-outlined">Load more</a>
+    </div>
   {% endif %}
 
 {% elif records is None %}
