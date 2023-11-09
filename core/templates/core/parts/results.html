@@ -1,15 +1,11 @@
 {% if records %}
-
-  <div class="panel select-options" x-show="show">
     {% for record in records %}
-      <a class="panel-block" @click="setRecord({ id: {{ record.id }}, name: '{{ record.name }}'})">
+      <a class="dropdown-item" @click="setRecord({ id: {{ record.id }}, name: '{{ record.name }}'})">
         {{ record }}
       </a>
     {% endfor %}
-  </div>
-
 {% elif records is None %}
-  <p>Start typing to search</p>
+  <a class="dropdown-item">Start typing to search</a>
 {% else %}
-  <p>No records found</p>
+  <a class="dropdown-item">No records found</a>
 {% endif %}
