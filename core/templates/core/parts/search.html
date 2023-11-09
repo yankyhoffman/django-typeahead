@@ -21,10 +21,12 @@
     <span class="icon is-left is-small"><ion-icon name="search-outline"></ion-icon></span>
   </div>
 
-  <div @click.outside="show = false" class="dropdown" :class="{ 'is-active': show }">
-    <div class="dropdown-menu">
-      <div class="dropdown-content" id="results">
-        {% include 'core/parts/results.html' with patrons=None %}
+  <div @click.outside="show = false">
+    <div class="dropdown is-active" x-show="show">
+      <div class="dropdown-menu">
+        <div class="dropdown-content" id="results">
+          {% include 'core/parts/results.html' with patrons=None %}
+        </div>
       </div>
     </div>
   </div>
