@@ -1,6 +1,6 @@
 {% if records %}
   {% for record in records %}
-    <a class="dropdown-item" @click="setRecord({ id: {{ record.id }}, name: '{{ record.name }}'})">
+    <a class="dropdown-item" @click="setRecord({ id: {{ record.id }}, name: '{{ record.full_name }}'})">
       {{ record }}
     </a>
   {% endfor %}
