@@ -25,7 +25,7 @@ def search(request):
         page = request.GET.get('page', '')
         page = int(page) if page.isdigit() else 1
 
-        chunk = 3
+        chunk = 50
 
         records = paginator.Paginator(fetch.order_by('id'), chunk).page(page)
 

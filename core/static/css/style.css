@@ -1,3 +1,11 @@
-.select-options {
-  color: red;
+/* Set a max height for the dropdown menu */
+.dropdown-content {
+  max-height: 200px; /* Adjust the value as needed */
+  overflow-y: auto;
+}
+
+/* Optional: Add a border or box shadow to make it clear that it's scrollable */
+.dropdown-content {
+  border: 1px solid #ccc; /* Optional border */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional box shadow */
 }
